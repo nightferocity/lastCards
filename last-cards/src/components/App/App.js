@@ -6,13 +6,15 @@ import './App.css';
 
 class App extends React.Component{
     render(){
+        let nav = this.props.navigationElements;
+
         return (
             <div className="App">
-                <Header/>
-                <Desk/>
+                <Header navigationElements = {nav}/>
+                <Desk name="Мама"/>
                 <Footer/>
             </div>
-        )
+        );
     }
 }
 

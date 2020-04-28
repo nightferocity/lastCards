@@ -8,7 +8,7 @@ class Desk extends React.Component {
             <main>
                 <article>
                     <header>
-                        <h1>Мама, роди меня обратно</h1>
+                        <h1>{this.props.name}, роди меня обратно</h1>
                     </header>
                     <p>
                         Исследователи гравитационных волн опубликовали замечательный сигнал, не похожий ни на один из

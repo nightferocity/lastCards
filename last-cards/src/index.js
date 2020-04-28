@@ -4,9 +4,16 @@ import './index.css';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
+let nav = {
+    main : "/index",
+    about : "/about",
+    desk : "/desk",
+    login : "/login"
+};
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App navigationElements = {nav}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
