@@ -19,8 +19,6 @@ class Menu extends React.Component {
         alert("Открыть форму входа");
     };
 
-
-
 render() {
         let className = "menuPanel";
         return (
@@ -31,8 +29,6 @@ render() {
                 <div className="block" onClick={this.SignIn}>Sign In</div>
             </div>
         );
-
-
     }
 }
 
