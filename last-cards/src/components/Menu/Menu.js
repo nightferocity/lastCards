@@ -1,20 +1,38 @@
 import React from "react";
-import './Menu.css';
+import style from "./Menu.css"
 
 class Menu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title : "Menu",
-        }
-    }
-    render() {
+
+    backToMenu = () => {
+        alert("Перебросить на начальную страницу")
+    };
+
+    makeAndSet = () => {
+        alert("Перебросить в меню редактирования карт");
+    };
+
+    getFAQ = () => {
+        alert("Показать справку разработчиков (из дурки) о работе приложения.");
+    };
+
+    SignIn = () => {
+        alert("Открыть форму входа");
+    };
+
+
+
+render() {
+        let className = "menuPanel";
         return (
-            <main>
-                <h1>Это меню</h1>
-                <p>Что тут делать?</p>
-            </main>
-        )
+            <div style={style} className={className}>
+                <div className="block" onClick={this.backToMenu}>Menu</div>
+                <div className="block" onClick={this.makeAndSet}>Make Set</div>
+                <div className="block" onClick={this.getFAQ}>FAQ</div>
+                <div className="block" onClick={this.SignIn}>Sign In</div>
+            </div>
+        );
+
+
     }
 }
 

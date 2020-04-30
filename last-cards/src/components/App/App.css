@@ -1,20 +1,8 @@
-.navbar li {
-  display: inline;
-  float: right;
-}
-
-.navbar li a {
-  display: block;
-  color: white;
+.App {
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: darkslategray;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
