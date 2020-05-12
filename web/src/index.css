@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ui.secondary.inverted.pointing.menu{
+  border-width: 0;
+  border-color: rgba(34,36,38,.15);
+}
+
+.ui.vertical.menu {
+  width: fit-content;
+}

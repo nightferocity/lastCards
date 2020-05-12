@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Card as CardBase, Grid, Loader, Container} from 'semantic-ui-react'
+import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header} from 'semantic-ui-react'
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
@@ -11,6 +11,51 @@ const Desc = ({addCard, removeCard, isReady, cards}) => {
                     <SetsMenu />
                 </Grid.Column>
                 <Grid.Column width={12}>
+                    <Segment inverted color={"grey"}>
+                        <Grid relaxed>
+                            <Grid.Column width={4}>
+                                <Button.Group>
+                                    <Button icon labelPosition='left' color={'teal'}>
+                                        <Icon name='cloud upload' />
+                                        Save
+                                    </Button>
+                                    <Button icon labelPosition='right' color={'green'}>
+                                        Start Learn
+                                        <Icon name='right arrow' />
+                                    </Button>
+                                </Button.Group>
+                            </Grid.Column>
+                            <Grid.Column width={8} verticalAlign={'middle'}>
+                                <Header inverted textAlign={'center'}>%Your set%</Header>
+                            </Grid.Column>
+                            <Grid.Column width={4}>
+                                <Button.Group floated={'right'}>
+                                    <Button primary
+                                            onClick={addCard.bind(this, {
+                                                "id": 10,
+                                                "setId": 1,
+                                                "front": "Shadow",
+                                                "back": "Тени"
+                                            })}
+                                            icon labelPosition='left'>
+                                        <Icon name='add' />
+                                        Add new card
+                                    </Button>
+                                    <Button secondary
+                                            onClick={removeCard.bind(this, {
+                                                "id": 10,
+                                                "setId": 1,
+                                                "front": "Shadow",
+                                                "back": "Тени"
+                                            })}
+                                            icon labelPosition='right'>
+                                        <Icon name='trash alternate' />
+                                        Delete
+                                    </Button>
+                                </Button.Group>
+                            </Grid.Column>
+                        </Grid>
+                    </Segment>
                     <CardBase.Group centered>
                         {!isReady ? (
                             <Loader active inline='centered' />
@@ -22,20 +67,6 @@ const Desc = ({addCard, removeCard, isReady, cards}) => {
                 <Grid.Column width={1} stretched>
                 </Grid.Column>
             </Grid>
-            <div>
-                <Button primary onClick={addCard.bind(this, {
-                    "id": 10,
-                    "setId": 1,
-                    "front": "Shadow",
-                    "back": "Тени"
-                })}>Add</Button>
-                <Button secondary onClick={removeCard.bind(this, {
-                    "id": 10,
-                    "setId": 1,
-                    "front": "Shadow",
-                    "back": "Тени"
-                })}>Delete</Button>
-            </div>
         </Container>
     )
 };
