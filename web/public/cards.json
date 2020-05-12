@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "setId": 0,
+        "front": "Somebody",
+        "back": "Кто-то"
+    },
+    {
+        "id": 1,
+        "setId": 0,
+        "front": "once",
+        "back": "однажды"
+    },
+    {
+        "id": 2,
+        "setId": 0,
+        "front": "told",
+        "back": "сказал"
+    },
+    {
+        "id": 3,
+        "setId": 0,
+        "front": "me",
+        "back": "мне"
+    },
+    {
+        "id": 4,
+        "setId": 0,
+        "front": "the world",
+        "back": "мир"
+    },
+    {
+        "id": 5,
+        "setId": 1,
+        "front": "is",
+        "back": "am, is, are - три рубашки глагола-короля"
+    },
+    {
+        "id": 6,
+        "setId": 2,
+        "front": "gonna",
+        "back": "собирается"
+    },
+    {
+        "id": 7,
+        "setId": 2,
+        "front": "roll",
+        "back": "раздавить"
+    },
+    {
+        "id": 8,
+        "setId": 2,
+        "front": "me",
+        "back": "меня"
+    }
+]
