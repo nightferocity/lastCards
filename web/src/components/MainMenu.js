@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu as MenuBase} from 'semantic-ui-react'
 
 const Menu = ({count}) => (
-    <MenuBase inverted>
+    <MenuBase pointing secondary inverted stackable size='massive'>
         <MenuBase.Item
             name='editorials'
             content='Start page'

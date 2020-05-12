@@ -10,18 +10,6 @@ import createStore from "./store";
 
 const store = createStore();
 
-// setTimeout(function () {
-//     store.dispatch({
-//         type: "SET_CARDS",
-//         payload: [
-//             {
-//                 id: 0,
-//                 front: "Привет-привет",
-//                 back: "Пока-пока"
-//             }
-//         ]
-//     })
-// }, 1000);
 
 ReactDOM.render(  //импортируем контейнер App, который в свою очередь импортирует компонент App
   <React.StrictMode>

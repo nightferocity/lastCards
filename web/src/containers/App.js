@@ -2,33 +2,10 @@ import { connect } from "react-redux";
 import {bindActionCreators} from "redux";
 import * as cardsActions from '../actions/cards'; //подрубаем все actions
 import * as setsActions from "../actions/sets"
-//import * as filterActions from '../actions/filter';
 import App from "../components/App";
-//import filter from 'lodash';
 
-const sortBy = (cards, filterBy, searchQuery) => {
-    let finded;
-    switch (filterBy) {
-        case "all":
-            finded = cards;
-            break;
-        default:{
-            finded = cards.filter(card => card.setId === (Number).parseFloat(filterBy));
-        }
-    }
-    if (searchQuery === "")
-        return finded;
-    else
-        return finded.filter(card =>
-            card.front.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0 ||
-            card.back.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0
-        );
-};
+const mapStateToProps = () => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
 
-
-const mapStateToProps = ({cards, filter}) => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
-    cards: cards.items && sortBy(cards.items, filter.filterBy, filter.searchQuery),
-    isReady: cards.isReady
 });
 
 const mapDispatchToProps = dispatch => ({ //объединяем actions
