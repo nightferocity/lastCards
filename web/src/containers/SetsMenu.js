@@ -4,8 +4,10 @@ import {bindActionCreators} from "redux";
 import * as filterActions from '../actions/filter';
 
 
-const mapStateToProps = ({filter}) => ({
+const mapStateToProps = ({filter, sets}) => ({
     filterBy: filter.filterBy,
+    sets: sets.items,
+    isReady: sets.isReady
 });
 
 const mapDispatchToProps = dispatch => ({

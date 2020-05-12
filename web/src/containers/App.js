@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import {bindActionCreators} from "redux";
 import * as cardsActions from '../actions/cards'; //подрубаем все actions
+import * as setsActions from "../actions/sets"
 //import * as filterActions from '../actions/filter';
 import App from "../components/App";
 //import filter from 'lodash';
@@ -32,6 +33,7 @@ const mapStateToProps = ({cards, filter}) => ({ //принимает состо�
 
 const mapDispatchToProps = dispatch => ({ //объединяем actions
     ...bindActionCreators(cardsActions, dispatch), //пробегается по actions из cards
+    ...bindActionCreators(setsActions, dispatch)
 });
 // ({ //возвращает ations как объект
 //     setCards: cards => dispatch(setCards(cards)),   //при вызове setCards вызывается dispatch в который проикидывается объект из actions cards.js

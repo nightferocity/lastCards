@@ -7,7 +7,10 @@ import {Container, Card as CardBase, Button} from "semantic-ui-react";
 
 class App extends React.Component{
     componentDidMount() { //перед отображением полюзователю сотвори эту херню
-        const {setCards} = this.props;
+        const {setCards, setSets} = this.props;
+        axios.get('/sets.json').then(({data}) => {
+            setSets(data);
+        });
         axios.get('/cards.json').then(({data}) => {
             setCards(data);
         });

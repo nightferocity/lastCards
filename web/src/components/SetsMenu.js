@@ -2,34 +2,24 @@ import React from 'react'
 import { Grid, Menu, Segment, Input} from 'semantic-ui-react'
 
 
-const SetsMenu = ({ setFilter, filterBy, searchQuery, setSearchQuery }) => (
+const SetsMenu = ({ setFilter, filterBy, searchQuery, setSearchQuery, isReady, sets }) => (
     <Grid>
         <Grid.Column width={4}>
-            <Menu fluid vertical tabular inverted>
-                <Menu.Item>
-                    <Input placeholder={"Поиск по тегу"}
-                           value={searchQuery}
-                           onChange={e => setSearchQuery(e.target.value)}
-                    />
-                </Menu.Item>
-                <Menu.Item
-                    active={filterBy === '0'}
-                    onClick={setFilter.bind(this, '0')}
-                >
-                    нулевки
-                </Menu.Item>
-                <Menu.Item
-                    active={filterBy === '1'}
-                    onClick={setFilter.bind(this, '1')}
-                >
-                    единички
-                </Menu.Item>
-                <Menu.Item
-                    active={filterBy === '2'}
-                    onClick={setFilter.bind(this, '2')}
-                >
-                    двойки
-                </Menu.Item>
+            <Menu.Item>
+                <Input placeholder={"Поиск"}
+                       value={searchQuery}
+                       onChange={e => setSearchQuery(e.target.value)}
+                />
+            </Menu.Item>
+            <Menu fluid vertical tabular>
+                {!isReady ? "Загрузка" : sets.map((set, i) => (
+                    <Menu.Item
+                        active={filterBy === set.id}
+                        onClick={setFilter.bind(this, set.id)}
+                    >
+                        {sets[i].name}
+                    </Menu.Item>
+                ))}
             </Menu>
         </Grid.Column>
 

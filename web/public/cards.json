@@ -31,26 +31,62 @@
     },
     {
         "id": 5,
-        "setId": 1,
+        "setId": 0,
         "front": "is",
         "back": "am, is, are - три рубашки глагола-короля"
     },
     {
         "id": 6,
-        "setId": 2,
+        "setId": 0,
         "front": "gonna",
         "back": "собирается"
     },
     {
         "id": 7,
-        "setId": 2,
+        "setId": 0,
         "front": "roll",
         "back": "раздавить"
     },
     {
         "id": 8,
-        "setId": 2,
+        "setId": 0,
         "front": "me",
         "back": "меня"
+    },
+    {
+        "id": 9,
+        "setId": 1,
+        "front": "Raid",
+        "back": "Поход"
+    },
+    {
+        "id": 10,
+        "setId": 1,
+        "front": "Shadow",
+        "back": "Тени"
+    },
+    {
+        "id": 11,
+        "setId": 1,
+        "front": "Legends",
+        "back": "Легенды"
+    },
+    {
+        "id": 12,
+        "setId": 2,
+        "front": "Spoon",
+        "back": "Ложка"
+    },
+    {
+        "id": 13,
+        "setId": 2,
+        "front": "Fork",
+        "back": "Вилка"
+    },
+    {
+        "id": 14,
+        "setId": 2,
+        "front": "Knife",
+        "back": "Нож"
     }
 ]
