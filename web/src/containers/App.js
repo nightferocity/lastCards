@@ -4,8 +4,8 @@ import * as cardsActions from '../actions/cards'; //подрубаем все ac
 import * as setsActions from "../actions/sets"
 import App from "../components/App";
 
-const mapStateToProps = () => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
-
+const mapStateToProps = ({pages}) => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
+    currentPage: pages.currentPage,
 });
 
 const mapDispatchToProps = dispatch => ({ //объединяем actions

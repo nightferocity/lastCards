@@ -7,7 +7,7 @@ const Desc = ({addCard, removeCard, isReady, cards}) => {
     return (
         <Container fluid>
             <Grid stackable>
-                <Grid.Column width={3} stretched>
+                <Grid.Column width={3}>
                     <SetsMenu />
                 </Grid.Column>
                 <Grid.Column width={12}>

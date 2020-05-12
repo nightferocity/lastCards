@@ -16,13 +16,17 @@ class App extends React.Component{
     }
 
     render() {
-        return(
-
-            <Container fluid>
-                <Menu/>
-                <Desc/>
-            </Container>
-        )
+        let {currentPage} = this.props;
+        switch(currentPage) {
+            case 'mainPage':
+                return(<Container fluid><Menu/></Container>);
+            case 'desk':
+                return(<Container fluid><Menu/><Desc/></Container>);
+            case 'faq':
+                return(<Container fluid><Menu/></Container>);
+            default:
+                return(<Container fluid><Menu/></Container>);
+        }
     }
 }
 

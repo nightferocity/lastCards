@@ -1,21 +1,24 @@
 import React from 'react'
 import { Menu as MenuBase} from 'semantic-ui-react'
 
-const Menu = ({count}) => (
+const Menu = ({count, currentPage, setPage}) => (
     <MenuBase pointing secondary inverted stackable size='massive'>
         <MenuBase.Item
-            name='editorials'
             content='Start page'
+            active={currentPage === 'startPage'}
+            onClick={setPage.bind(this, 'startPage')}
         />
 
         <MenuBase.Item
-            name='reviews'
             content='Desk'
+            active={currentPage === 'desk'}
+            onClick={setPage.bind(this, 'desk')}
         />
 
         <MenuBase.Item
-            name='upcomingEvents'
             content='FAQ'
+            active={currentPage === 'faq'}
+            onClick={setPage.bind(this, 'faq')}
         />
 
         <MenuBase.Menu position={"right"}>
