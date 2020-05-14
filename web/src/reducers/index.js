@@ -4,6 +4,7 @@ import chosenCards from "./chosenCards";
 import filter from "./filter";
 import sets from "./sets";
 import pages from "./pages";
+import learning from "./learning";
 
 export default combineReducers({
     cards,
@@ -11,4 +12,5 @@ export default combineReducers({
     filter,
     sets,
     pages,
+    learning
 });

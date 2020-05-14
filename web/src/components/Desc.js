@@ -3,7 +3,7 @@ import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
-const Desc = ({addCard, removeCard, isReady, cards, setName}) => {
+const Desc = ({addCard, removeCard, isReady, cards, setName, setPage}) => {
     return (
         <Container fluid>
             <Grid stackable>
@@ -19,7 +19,7 @@ const Desc = ({addCard, removeCard, isReady, cards, setName}) => {
                                         <Icon name='cloud upload' />
                                         Save
                                     </Button>
-                                    <Button icon labelPosition='right' color={'green'}>
+                                    <Button icon labelPosition='right' color={'green'} onClick={setPage.bind(this, 'trainingPage')}>
                                         Start Learn
                                         <Icon name='right arrow' />
                                     </Button>

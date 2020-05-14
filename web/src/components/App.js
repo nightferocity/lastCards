@@ -4,6 +4,7 @@ import Menu from '../containers/MainMenu';
 import Desc from '../containers/Desc'
 import {Container} from "semantic-ui-react";
 import NotFound from "./NotFound";
+import Gym from "../containers/Gym";
 
 class App extends React.Component{
     componentDidMount() { //перед отображением полюзователю сотвори эту херню
@@ -25,6 +26,8 @@ class App extends React.Component{
                 return(<Container fluid><Menu/><Desc/></Container>);
             case 'faq':
                 return(<Container fluid><Menu/><NotFound/></Container>);
+            case 'trainingPage':
+                return(<Container fluid><Menu/><Gym/></Container>);
             default:
                 return(<Container fluid><Menu/><NotFound/></Container>);
         }
