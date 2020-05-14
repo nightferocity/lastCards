@@ -22,12 +22,17 @@ const sortBy = (cards, filterBy, searchQuery) => {
         );
 };
 
+function findSetName(setId, sets) {
+    let set = sets.filter(set => setId === set.id);
+    return  set.length ? set[0].name : "All";
+}
 
-const mapStateToProps = ({filter, cards}) => ({
+const mapStateToProps = ({filter, cards, sets}) => ({
     addCard: filter.addCard,
     removeCard: filter.removeCard,
     isReady: cards.isReady,
     cards: cards.items && sortBy(cards.items, filter.filterBy, filter.searchQuery),
+    setName: findSetName(filter.filterBy, sets.items),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,7 +3,7 @@ import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
-const Desc = ({addCard, removeCard, isReady, cards}) => {
+const Desc = ({addCard, removeCard, isReady, cards, setName}) => {
     return (
         <Container fluid>
             <Grid stackable>
@@ -26,7 +26,7 @@ const Desc = ({addCard, removeCard, isReady, cards}) => {
                                 </Button.Group>
                             </Grid.Column>
                             <Grid.Column width={8} verticalAlign={'middle'}>
-                                <Header inverted textAlign={'center'}>%Your set%</Header>
+                                <Header inverted textAlign={'center'}>{setName}</Header>
                             </Grid.Column>
                             <Grid.Column width={4}>
                                 <Button.Group floated={'right'}>
