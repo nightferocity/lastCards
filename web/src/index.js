@@ -12,10 +12,10 @@ const store = createStore();
 
 
 ReactDOM.render(  //импортируем контейнер App, который в свою очередь импортирует компонент App
-  <React.StrictMode>
-    <Provider store={store}>
-        <App/>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );

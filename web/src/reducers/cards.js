@@ -29,6 +29,17 @@ export default (state = initialState, action) => {
                 ...state,
                 items: state.items.filter(o => o.id !== action.payload.id)
             };
+        case "CHANGE_CARD": {
+            const newState = JSON.parse(JSON.stringify(state));
+            let cardIndex = newState.items.findIndex(card => card.id === action.payload.id);
+            newState.items[cardIndex] = {
+                "id": state.items[cardIndex].id,
+                "setId": state.items[cardIndex].setId,
+                "front":  action.front,
+                "back": action.back
+            };
+            return newState
+        }
         default:
             return state;
     }

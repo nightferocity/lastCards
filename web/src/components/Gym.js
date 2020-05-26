@@ -11,7 +11,7 @@ const Gym = ({isFrontSide, setFrontSide, card}) => {
             </Button.Group>
             <TransitionablePortal open={isFrontSide}>
                 <Segment placeholder
-                    style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000, width: '50%',}}
+                         style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000, width: '50%',}}
                          textAlign={'center'}
                 >
                     <h1>{card.front}</h1>
@@ -19,7 +19,7 @@ const Gym = ({isFrontSide, setFrontSide, card}) => {
             </TransitionablePortal>
             <TransitionablePortal open={!isFrontSide}>
                 <Segment placeholder
-                    style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000 , width: '50%'}}
+                         style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000 , width: '50%'}}
                          textAlign={'center'}
                 >
                     <h1>{card.back}</h1>

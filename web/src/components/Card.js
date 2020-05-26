@@ -1,22 +1,23 @@
 import React from 'react'
 import { Button, Card as CardBase} from 'semantic-ui-react'
 
+
 const Card = (card) => {
-    const {front ,back, addToChosen} = card;
+    const {front ,back, addToChosen, changeCard} = card;
     return (
         <CardBase>
-            <CardBase.Content>
+            <CardBase.Content onClick={changeCard.bind(this,card)}>
                 <CardBase.Header>{front}</CardBase.Header>
                 <CardBase.Meta>[{front}]</CardBase.Meta>
             </CardBase.Content>
-            <CardBase.Content extra>
+            <CardBase.Content extra onClick={changeCard.bind(this,card)}>
                 <CardBase.Header>{back}</CardBase.Header>
                 <CardBase.Meta>[{back}]</CardBase.Meta>
             </CardBase.Content>
             <CardBase.Content extra>
                 <div className='ui three buttons'>
                     <Button basic color='green'
-                            onClick={addToChosen.bind(this, card)}
+                            onClick={ addToChosen.bind(this, card)}
                     >
                         Pick
                     </Button>
