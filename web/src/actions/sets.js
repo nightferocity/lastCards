@@ -3,9 +3,9 @@ export const setSets = (sets) => ({
     payload: sets
 });
 
-export const addSet = (set) => ({
+export const addSet = () => ({
     type: "ADD_SET",
-    payload: set
+    name: prompt("Введите название новой колоды!", "Новая колода")
 });
 
 export const removeSet = (set) => ({

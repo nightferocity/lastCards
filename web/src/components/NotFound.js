@@ -7,7 +7,7 @@ const NotFound = () => {
             <Segment placeholder color={"orange"} inverted size={"massive"}>
                 <Header icon>
                     <Icon name='bug' />
-                    Ooops, it's wrong page!
+                    Sorry! Temporary doesn't work.
                 </Header>
             </Segment>
         </Container>

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {bindActionCreators} from "redux";
 import * as cardsActions from '../actions/cards'; //подрубаем все actions
 import * as pagesActions from "../actions/pages"
+import * as setsActions from "../actions/sets"
 
 const sortBy = (cards, filterBy, searchQuery) => {
     let finded;
@@ -39,6 +40,7 @@ const mapStateToProps = ({filter, cards, sets}) => ({
 const mapDispatchToProps = dispatch => ({
     ...bindActionCreators(cardsActions, dispatch),
     ...bindActionCreators(pagesActions, dispatch),
+    ...bindActionCreators(setsActions,dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Desc);

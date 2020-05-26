@@ -11,14 +11,24 @@ export default (state = initialState, action) => {
                 items: action.payload,
                 isReady: true,
             };
-        case "ADD_CARD":
-            return  {
-                ...state,
-                items: [
-                    ...state.items,
-                    action.payload
-                ]
-            };
+        case "ADD_CARD":{
+            let newState = JSON.parse(JSON.stringify(state));
+            newState.items.push({
+                front: "Не изменялось",
+                back:"No change",
+                id: 1,
+                setId: 1
+            })
+            return newState;
+        }
+
+            // return  {
+            //     ...state,
+            //     items: [
+            //         ...state.items,
+            //         action.payload
+            //     ]
+            // };
         case "SET_IS_READY":
             return {
                 ...state,

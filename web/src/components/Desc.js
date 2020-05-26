@@ -3,7 +3,7 @@ import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
-const Desc = ({addCard, removeCard, isReady, cards, setName, setPage}) => {
+const Desc = ({addCard, removeCard, isReady, cards, setName, setPage, addSet}) => {
     return (
         <Container fluid>
             <Grid stackable>
@@ -25,18 +25,19 @@ const Desc = ({addCard, removeCard, isReady, cards, setName, setPage}) => {
                                     </Button>
                                 </Button.Group>
                             </Grid.Column>
-                            <Grid.Column width={8} verticalAlign={'middle'}>
+                            <Grid.Column width={6} verticalAlign={'middle'}>
                                 <Header inverted textAlign={'center'}>{setName}</Header>
                             </Grid.Column>
                             <Grid.Column width={4}>
                                 <Button.Group floated={'right'}>
+                                    <Button zero
+                                            onClick={addSet.bind(this)}
+                                            icon labelPosition='left'>
+                                        <Icon name='add' />
+                                        Add new desk
+                                    </Button>
                                     <Button primary
-                                            onClick={addCard.bind(this, {
-                                                "id": 10,
-                                                "setId": 1,
-                                                "front": "Shadow",
-                                                "back": "Тени"
-                                            })}
+                                            onClick={addCard.bind(this, )}
                                             icon labelPosition='left'>
                                         <Icon name='add' />
                                         Add new card
