@@ -29,13 +29,17 @@ function findSetName(setId, sets) {
     return  set.length ? set[0].name : "All";
 }
 
-const mapStateToProps = ({filter, cards, sets}) => ({
+const mapStateToProps = ({filter, cards, sets}) => {
+    let a =  {
     addCard: filter.addCard,
     removeCard: filter.removeCard,
     isReady: cards.isReady,
     cards: cards.items && sortBy(cards.items, filter.filterBy, filter.searchQuery),
     setName: findSetName(filter.filterBy, sets.items),
-});
+    descId: filter.filterBy,
+    };
+    return a;
+};
 
 const mapDispatchToProps = dispatch => ({
     ...bindActionCreators(cardsActions, dispatch),

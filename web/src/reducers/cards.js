@@ -13,12 +13,14 @@ export default (state = initialState, action) => {
             };
         case "ADD_CARD":{
             let newState = JSON.parse(JSON.stringify(state));
+            let middleID = newState.items.reduce((prev, curr) => curr.id - prev.id === 1? curr: prev).id;
+            let nextID = middleID === newState.items[newState.items.length - 1].id? middleID+1: middleID;
             newState.items.push({
                 front: "Не изменялось",
                 back:"No change",
-                id: 1,
-                setId: 1
-            })
+                id: nextID,
+                setId: action.deskID
+            });
             return newState;
         }
 

@@ -3,7 +3,7 @@ import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
-const Desc = ({addCard, removeCard, isReady, cards, setName, setPage, addSet}) => {
+const Desc = ({addCard, removeCard, isReady, cards, setName, setPage, addSet, descId}) => {
     return (
         <Container fluid>
             <Grid stackable>
@@ -19,7 +19,7 @@ const Desc = ({addCard, removeCard, isReady, cards, setName, setPage, addSet}) =
                                         <Icon name='cloud upload' />
                                         Save
                                     </Button>
-                                    <Button icon labelPosition='right' color={'green'} onClick={setPage.bind(this, 'trainingPage')}>
+                                    <Button icon labelPosition='right' color={'green'} onClick={ () => setPage('trainingPage') }>
                                         Start Learn
                                         <Icon name='right arrow' />
                                     </Button>
@@ -31,19 +31,20 @@ const Desc = ({addCard, removeCard, isReady, cards, setName, setPage, addSet}) =
                             <Grid.Column width={4}>
                                 <Button.Group floated={'right'}>
                                     <Button zero
-                                            onClick={addSet.bind(this)}
+                                            onClick={() => addSet()}
                                             icon labelPosition='left'>
                                         <Icon name='add' />
                                         Add new desk
                                     </Button>
                                     <Button primary
-                                            onClick={addCard.bind(this, )}
+                                            disabled={!Number.isInteger(descId)}
+                                            onClick={() => addCard(descId)}
                                             icon labelPosition='left'>
                                         <Icon name='add' />
                                         Add new card
                                     </Button>
                                     <Button secondary
-                                            onClick={removeCard.bind(this, {
+                                            onClick={() => removeCard( {
                                                 "id": 10,
                                                 "setId": 1,
                                                 "front": "Shadow",

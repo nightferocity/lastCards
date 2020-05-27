@@ -3,9 +3,9 @@ export const setCards = (cards) => ({
     payload: cards
 });
 
-export const addCard = (desk) => ({
+export const addCard = (deskID) => ({
     type: "ADD_CARD",
-    payload: desk
+    deskID: deskID
 });
 
 export const removeCard = (card) => ({
