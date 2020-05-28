@@ -5,9 +5,9 @@ const Gym = ({isFrontSide, setFrontSide, card}) => {
     return (
         <Container>
             <Button.Group>
-                <Form.Button disabled={!isFrontSide} content={'Flip over'} onClick={setFrontSide.bind(this, false)}/>
-                <Form.Button disabled={isFrontSide} content={'No'} onClick={setFrontSide.bind(this, true)}/>
-                <Form.Button disabled={isFrontSide} content={'Yes'} onClick={setFrontSide.bind(this, true)}/>
+                <Form.Button disabled={!isFrontSide} content={'Принять поражение'} onClick={() => setFrontSide(false)}/>
+                <Form.Button disabled={isFrontSide} content={'Не знаю'} onClick={() => setFrontSide(true)}/>
+                <Form.Button disabled={isFrontSide} content={'Знаю'} onClick={() => setFrontSide(true)}/>
             </Button.Group>
             <TransitionablePortal open={isFrontSide}>
                 <Segment placeholder

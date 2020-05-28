@@ -3,7 +3,7 @@ import {Button, Card as CardBase, Grid, Loader, Container, Icon, Segment, Header
 import SetsMenu from "../containers/SetsMenu";
 import Card from "../containers/Card"
 
-const Desc = ({addCard, isReady, cards, setName, setPage, addSet, descId, removeSet, removeCardsFromDesc}) => {
+const Desc = ({addCard, isReady, cards, setName, setPage, addSet, descId, removeSet, removeCardsFromDesc, setFilter}) => {
     return (
         <Container fluid>
             <Grid stackable>
@@ -34,7 +34,7 @@ const Desc = ({addCard, isReady, cards, setName, setPage, addSet, descId, remove
                                             onClick={() => addSet()}
                                             icon labelPosition='left'>
                                         <Icon name='add' />
-                                        Add new desk
+                                        Add new desc
                                     </Button>
                                     <Button primary
                                             disabled={!Number.isInteger(descId)}
@@ -48,6 +48,7 @@ const Desc = ({addCard, isReady, cards, setName, setPage, addSet, descId, remove
                                             onClick={ () => {
                                                 removeSet(descId);
                                                 removeCardsFromDesc(descId);
+                                                setFilter("all");
                                                 }
                                             }
                                         icon labelPosition='right'>

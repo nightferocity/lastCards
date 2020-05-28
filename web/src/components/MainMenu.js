@@ -1,11 +1,15 @@
 import React from 'react'
 import { Menu as MenuBase} from 'semantic-ui-react'
 
-const Menu = ({count, currentPage, setPage}) => (
+const Menu = ({count, currentPage, setPage, setFilter}) => (
     <MenuBase pointing secondary inverted stackable size='massive'>
         <MenuBase.Item
             name={"chosen"}
-            content={"Счетчик-тест "+ count}
+            content={"Выбранные карты "+ count}
+            onClick = {() => {
+                setPage('desk');
+                setFilter("game");
+            }}
         />
         <MenuBase.Menu position='right'>
             <MenuBase.Item

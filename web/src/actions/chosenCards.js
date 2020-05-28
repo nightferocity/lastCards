@@ -1,6 +1,6 @@
-export const addToChosen = (obj) => ({
+export const addToChosen = (card) => ({
     type: "ADD_CARD_TO_CHOSEN",
-    payload: obj
+    payload: card
 });
 
 export const removeFromChosen = (id) => ({

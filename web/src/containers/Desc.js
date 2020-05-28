@@ -4,6 +4,8 @@ import {bindActionCreators} from "redux";
 import * as cardsActions from '../actions/cards'; //подрубаем все actions
 import * as pagesActions from "../actions/pages"
 import * as setsActions from "../actions/sets"
+import * as filterActions from "../actions/filter";
+
 
 const sortBy = (cards, filterBy, searchQuery) => {
     let finded;
@@ -26,7 +28,7 @@ const sortBy = (cards, filterBy, searchQuery) => {
 
 function findSetName(setId, sets) {
     let set = sets.filter(set => setId === set.id);
-    return  set.length ? set[0].name : "All";
+    return  set.length ? set[0].name : "Все карты";
 }
 
 
@@ -46,6 +48,7 @@ const mapDispatchToProps = dispatch => ({
     ...bindActionCreators(cardsActions, dispatch),
     ...bindActionCreators(pagesActions, dispatch),
     ...bindActionCreators(setsActions,dispatch),
+    ...bindActionCreators(filterActions, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Desc);

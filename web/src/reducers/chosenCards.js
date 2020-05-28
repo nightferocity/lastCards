@@ -9,7 +9,12 @@ export default (state = initialState, action) => {
                 ...state,
                 items: [
                     ...state.items,
-                    action.payload
+                    {
+                        id: action.payload.id,
+                        setId: "game",
+                        front: action.payload.front,
+                        back: action.payload.back
+                    }
                 ],
             };
         case "REMOVE_CARD_FROM_CHOSEN":

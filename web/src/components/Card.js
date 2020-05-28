@@ -17,8 +17,7 @@ const Card = (card) => {
             <CardBase.Content extra>
                 <div className='ui three buttons'>
                     <Button basic color='green'
-                            onClick={ () => addToChosen(card)}
-                    >
+                            onClick={ () => addToChosen(card)}>
                         Pick
                     </Button>
                     <Button basic color='green' onClick={ () => changeCard(card)}>

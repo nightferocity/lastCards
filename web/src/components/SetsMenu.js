@@ -17,7 +17,7 @@ const SetsMenu = ({ setFilter, filterBy, searchQuery, setSearchQuery, isReady, s
             : sets.map((set, i) => (
                 <Menu.Item
                     active={filterBy === set.id}
-                    onClick={setFilter.bind(this, set.id)}
+                    onClick={() => setFilter(set.id)}
                 >
                     {sets[i].name}
                 </Menu.Item>
