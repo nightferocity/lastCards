@@ -3,7 +3,7 @@ import { Button, Card as CardBase} from 'semantic-ui-react'
 
 
 const Card = (card) => {
-    const {front ,back, addToChosen, changeCard} = card;
+    const {front ,back, addToChosen, changeCard, removeCard} = card;
     return (
         <CardBase>
             <CardBase.Content>
@@ -17,14 +17,14 @@ const Card = (card) => {
             <CardBase.Content extra>
                 <div className='ui three buttons'>
                     <Button basic color='green'
-                            onClick={ addToChosen.bind(this, card)}
+                            onClick={ () => addToChosen(card)}
                     >
                         Pick
                     </Button>
-                    <Button basic color='green' onClick={changeCard.bind(this,card)}>
+                    <Button basic color='green' onClick={ () => changeCard(card)}>
                         Change
                     </Button>
-                    <Button basic color='red'>
+                    <Button basic color='red' onClick={ () => removeCard(card)}>
                         Delete
                     </Button>
                 </div>

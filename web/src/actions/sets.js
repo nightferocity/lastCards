@@ -8,7 +8,8 @@ export const addSet = () => ({
     name: prompt("Введите название новой колоды!", "Новая колода")
 });
 
-export const removeSet = (set) => ({
+export const removeSet = (descId, cards) => ({
     type: "REMOVE_SET",
-    payload: set
+    descId: descId,
+    cards: cards
 });

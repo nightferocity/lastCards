@@ -11,19 +11,19 @@ const Menu = ({count, currentPage, setPage}) => (
             <MenuBase.Item
                 content='Start page'
                 active={currentPage === 'startPage'}
-                onClick={setPage.bind(this, 'startPage')}
+                onClick={() => setPage('startPage')}
             />
 
             <MenuBase.Item
                 content='Desk'
                 active={currentPage === 'desk'}
-                onClick={setPage.bind(this, 'desk')}
+                onClick={() => setPage('desk')}
             />
 
             <MenuBase.Item
                 content='FAQ'
                 active={currentPage === 'faq'}
-                onClick={setPage.bind(this, 'faq')}
+                onClick={() => setPage('faq')}
             />
         </MenuBase.Menu>
     </MenuBase>

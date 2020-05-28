@@ -12,3 +12,7 @@ export const removeCard = (card) => ({
     type: "REMOVE_CARD",
     payload: card
 });
+export const removeCardsFromDesc = (descID)=> ({
+    type: "REMOVE_DESC_CARDS",
+    descID: descID
+});
