@@ -3,9 +3,11 @@ import {bindActionCreators} from "redux";
 import * as learningActions from "../actions/learning";
 import Gym from "../components/Gym"
 
-const mapStateToProps = ({learning, cards}) => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
+
+const mapStateToProps = ({learning}) => ({ //принимает состояние хранилища и прокидывает в сам App через connect ниже
     isFrontSide : learning.isFrontSide,
-    card : cards.items[2],
+    gameCard : learning.item[learning.numberCard],
+    isLastCard : learning.isLastCard
 });
 
 const mapDispatchToProps = dispatch => ({

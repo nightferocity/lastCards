@@ -1,20 +1,32 @@
 import React from 'react'
 import { Container, Button, Segment, Form, TransitionablePortal} from 'semantic-ui-react'
 
-const Gym = ({isFrontSide, setFrontSide, card}) => {
+const Gym = ({isFrontSide,takeNextCard, gameCard, isLastCard}) => {
+    function eventOneCLick() {
+        if (!isLastCard) takeNextCard();
+        isFrontSide = true;
+    }
+
     return (
         <Container>
             <Button.Group>
-                <Form.Button disabled={!isFrontSide} content={'Принять поражение'} onClick={() => setFrontSide(false)}/>
-                <Form.Button disabled={isFrontSide} content={'Не знаю'} onClick={() => setFrontSide(true)}/>
-                <Form.Button disabled={isFrontSide} content={'Знаю'} onClick={() => setFrontSide(true)}/>
+                <Form.Button  content={'Знаю'} onClick={ () =>  isFrontSide = false }/>
+                <Form.Button  content={'Не знаю'} disabled={isLastCard} onClick = { () => {
+                    eventOneCLick()
+                }}/>
+                <Form.Button  content={'Верно'} disabled={isLastCard} onClick = { () => {
+                    eventOneCLick()
+                }}/>
+                <Form.Button  content={'Не верно'} disabled={isLastCard} onClick = { () => {
+                    eventOneCLick()
+                }}/>
             </Button.Group>
             <TransitionablePortal open={isFrontSide}>
                 <Segment placeholder
                          style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000, width: '50%',}}
                          textAlign={'center'}
                 >
-                    <h1>{card.front}</h1>
+                    <h1>{gameCard.front}</h1>
                 </Segment>
             </TransitionablePortal>
             <TransitionablePortal open={!isFrontSide}>
@@ -22,7 +34,7 @@ const Gym = ({isFrontSide, setFrontSide, card}) => {
                          style={{ left: '25%', position: 'fixed', top: '25%', zIndex: 1000 , width: '50%'}}
                          textAlign={'center'}
                 >
-                    <h1>{card.back}</h1>
+                    <h1>{gameCard.back}</h1>
                 </Segment>
             </TransitionablePortal>
         </Container>

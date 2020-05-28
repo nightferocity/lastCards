@@ -5,6 +5,7 @@ import * as cardsActions from '../actions/cards'; //подрубаем все ac
 import * as pagesActions from "../actions/pages"
 import * as setsActions from "../actions/sets"
 import * as filterActions from "../actions/filter";
+import * as learningActions from "../actions/learning";
 
 
 const sortBy = (cards, filterBy, searchQuery) => {
@@ -33,7 +34,7 @@ function findSetName(setId, sets) {
 
 
 
-const mapStateToProps = ({filter, cards, sets}) => {
+const mapStateToProps = ({filter, cards, sets, chosenCards}) => {
     return {
     addCard: filter.addCard,
     removeCard: filter.removeCard,
@@ -41,6 +42,7 @@ const mapStateToProps = ({filter, cards, sets}) => {
     cards: cards.items && sortBy(cards.items, filter.filterBy, filter.searchQuery),
     setName: findSetName(filter.filterBy, sets.items),
     descId: filter.filterBy,
+    gameCards: chosenCards.items
     };
 };
 
@@ -48,7 +50,9 @@ const mapDispatchToProps = dispatch => ({
     ...bindActionCreators(cardsActions, dispatch),
     ...bindActionCreators(pagesActions, dispatch),
     ...bindActionCreators(setsActions,dispatch),
-    ...bindActionCreators(filterActions, dispatch)
+    ...bindActionCreators(filterActions, dispatch),
+    ...bindActionCreators(learningActions, dispatch)
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Desc);
