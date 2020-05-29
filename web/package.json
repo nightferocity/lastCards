@@ -7,7 +7,13 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
+    "mongoose": "^5.9.16",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-logger": "^1.1.0",
@@ -39,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App], да",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
